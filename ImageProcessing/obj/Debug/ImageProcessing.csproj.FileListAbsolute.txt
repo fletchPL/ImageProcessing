@@ -1,1 +1,9 @@
 c:\users\maciej\documents\visual studio 2015\Projects\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.exe.config
+C:\Users\Maciej\documents\visual studio 2015\Projects\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.exe
+C:\Users\Maciej\documents\visual studio 2015\Projects\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.pdb
+C:\Users\Maciej\documents\visual studio 2015\Projects\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\documents\visual studio 2015\Projects\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.Form1.resources
+C:\Users\Maciej\documents\visual studio 2015\Projects\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.Properties.Resources.resources
+C:\Users\Maciej\documents\visual studio 2015\Projects\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.csproj.GenerateResource.Cache
+C:\Users\Maciej\documents\visual studio 2015\Projects\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.exe
+C:\Users\Maciej\documents\visual studio 2015\Projects\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.pdb
