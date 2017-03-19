@@ -64,6 +64,19 @@ namespace ImageProcessing
             string line = getLine(file);        //tu chyba będzie wymagało poprawki 
             var pos = line.Split(',').Count();
 
+            if(pos.Equals(-1))
+            {
+                return false;
+            }
+
+            uint classFeaturesNo = uint.Parse(line.Substring(0, pos));
+
+            string featuresID = line.Substring(pos + 1);
+
+            while(true)
+            {
+                
+            }
 
             return true;
         }
