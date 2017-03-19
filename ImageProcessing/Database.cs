@@ -19,13 +19,16 @@ namespace ImageProcessing
             private uint noFeatures;
         #endregion
 
-        #region Public Variables
+        #region Public function 
             public Database ()
             {
                 noClass = 0;
                 noObjects = 0;
                 noFeatures = 0;
             }
+
+      
+
         #endregion
     }
 }
