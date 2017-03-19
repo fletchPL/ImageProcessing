@@ -53,6 +53,7 @@
             this.saveFileButtonClassifiers = new System.Windows.Forms.Button();
             this.openFileButtonClassifiers = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.tablePages.SuspendLayout();
             this.preprocessingTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdgesDetected)).BeginInit();
@@ -184,6 +185,7 @@
             this.saveFileButton.TabIndex = 1;
             this.saveFileButton.Text = "Save File";
             this.saveFileButton.UseVisualStyleBackColor = true;
+            this.saveFileButton.Click += new System.EventHandler(this.saveFileButton_Click);
             // 
             // openFileButton
             // 
@@ -351,6 +353,7 @@
         private System.Windows.Forms.TextBox trainingTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 

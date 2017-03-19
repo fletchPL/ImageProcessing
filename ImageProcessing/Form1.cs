@@ -21,5 +21,22 @@ namespace ImageProcessing
         {
             openFileDialog.ShowDialog();
         }
+
+        private void saveFileButton_Click(object sender, EventArgs e)
+        {
+            saveFileFunction();
+        }
+
+        public void saveFileFunction()
+        {
+            saveFileDialog.ShowDialog();
+            saveFileDialog.InitialDirectory = @"C:\";
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.DefaultExt = "txt";
+            saveFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog.CheckFileExists = true;
+            saveFileDialog.CheckPathExists = true;
+
+        }
     }
 }

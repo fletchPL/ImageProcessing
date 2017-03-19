@@ -42,7 +42,7 @@ namespace ImageProcessing
             objects.Add(obj);
             ++noObjects;
 
-            if(classCounters[obj.getClassName()]++ == 0)
+            if (classCounters[obj.getClassName()]++ == 0)
             {
                 classNameVector.Add(obj.getClassName());
             }
@@ -50,13 +50,13 @@ namespace ImageProcessing
             return true;
         }
 
-        public bool load(string fileName)
+        public bool load(string fileName) // FUNKCJA LOAD JEST CAŁA DO POPRAWY
         {
             clear();
 
             var file = new StreamReader(File.OpenRead(fileName));
 
-            if(file.BaseStream == null)
+            if (file.BaseStream == null)
             {
                 return false;
             }
@@ -64,7 +64,7 @@ namespace ImageProcessing
             string line = getLine(file);        //tu chyba będzie wymagało poprawki 
             var pos = line.Split(',').Count();
 
-            if(pos.Equals(-1))
+            if (pos.Equals(-1))
             {
                 return false;
             }
@@ -73,18 +73,36 @@ namespace ImageProcessing
 
             string featuresID = line.Substring(pos + 1);
 
-            while(true)
+            while (true)
             {
-                
+                pos = featuresID.IndexOf(',');
+                if (pos != -1)
+                {
+                    string feature = featuresID.Substring(0, pos);
+                    featuresID = featuresID.Substring(pos + 1);
+                    uint featureID = uint.Parse(feature);
+                    featuresIDs.Add(featureID);
+
+                }
+                else
+                {
+                    uint featureID = uint.Parse(featuresID);
+                    featuresIDs.Add(featureID);
+                    break;
+                }
+
+
             }
 
             return true;
         }
 
+        //Funkcja Save będzie przeniesiona do FORM1.cs
+
         public string getLine(StreamReader file)
         {
             string line = file.ReadLine();
-           
+
             return line;
         }
 
@@ -99,6 +117,7 @@ namespace ImageProcessing
             noFeatures = 0;
         }
 
+       
         #endregion
     }
 }
