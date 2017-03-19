@@ -17,11 +17,11 @@ namespace ImageProcessing
             return this.className;
         }
 
-        public int getFeaturesNumber()
+        public uint getFeaturesNumber()
         {
             return this.features.Count();
         }
-        public List getFeatures()
+        public List<float> getFeatures()
         {
             return this.features;
         }
