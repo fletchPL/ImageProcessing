@@ -16,5 +16,10 @@ namespace ImageProcessing
         {
             InitializeComponent();
         }
+
+        private void selectFolderButton_Click(object sender, EventArgs e)
+        {
+            openFileDialog.ShowDialog();
+        }
     }
 }
