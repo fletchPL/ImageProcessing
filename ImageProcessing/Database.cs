@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,6 +48,42 @@ namespace ImageProcessing
             }
 
             return true;
+        }
+
+        public bool load(string fileName)
+        {
+            clear();
+
+            var file = new StreamReader(File.OpenRead(fileName));
+
+            if(file.BaseStream == null)
+            {
+                return false;
+            }
+
+            string line = getLine(file);        //tu chyba będzie wymagało poprawki 
+            var pos = line.Split(',').Count();
+
+
+            return true;
+        }
+
+        public string getLine(StreamReader file)
+        {
+            string line = file.ReadLine();
+           
+            return line;
+        }
+
+        public void clear()
+        {
+            objects.Clear();
+            classNameVector.Clear();
+            classCounters.Clear();
+            featuresIDs.Clear();
+            noClass = 0;
+            noObjects = 0;
+            noFeatures = 0;
         }
 
         #endregion
