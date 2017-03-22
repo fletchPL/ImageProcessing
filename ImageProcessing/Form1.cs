@@ -38,5 +38,17 @@ namespace ImageProcessing
             saveFileDialog.CheckPathExists = true;
 
         }
+
+        private void openFileButton_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog.ShowDialog().Equals(DialogResult.OK))
+            {
+                string fullPath = openFileDialog.FileName;
+                string fileName = openFileDialog.SafeFileName;
+                label3.Text = fullPath;
+                label4.Text = fileName;
+            }
+        }
+
     }
 }

@@ -54,6 +54,8 @@
             this.openFileButtonClassifiers = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tablePages.SuspendLayout();
             this.preprocessingTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdgesDetected)).BeginInit();
@@ -114,6 +116,8 @@
             // 
             // tabFeaturesSelectionPages
             // 
+            this.tabFeaturesSelectionPages.Controls.Add(this.label4);
+            this.tabFeaturesSelectionPages.Controls.Add(this.label3);
             this.tabFeaturesSelectionPages.Controls.Add(this.comboBox);
             this.tabFeaturesSelectionPages.Controls.Add(this.computeButton);
             this.tabFeaturesSelectionPages.Controls.Add(this.sfsRadioButton);
@@ -195,6 +199,7 @@
             this.openFileButton.TabIndex = 0;
             this.openFileButton.Text = "Open File";
             this.openFileButton.UseVisualStyleBackColor = true;
+            this.openFileButton.Click += new System.EventHandler(this.openFileButton_Click);
             // 
             // classifiersTabPage
             // 
@@ -306,6 +311,24 @@
             // 
             this.openFileDialog.FileName = "openFileDialog";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(36, 232);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(39, 265);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "label4";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +377,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -54,45 +54,7 @@ namespace ImageProcessing
         {
             clear();
 
-            var file = new StreamReader(File.OpenRead(fileName));
-
-            if (file.BaseStream == null)
-            {
-                return false;
-            }
-
-            string line = getLine(file);        //tu chyba będzie wymagało poprawki 
-            var pos = line.Split(',').Count();
-
-            if (pos.Equals(-1))
-            {
-                return false;
-            }
-
-            uint classFeaturesNo = uint.Parse(line.Substring(0, pos));
-
-            string featuresID = line.Substring(pos + 1);
-
-            while (true)
-            {
-                pos = featuresID.IndexOf(',');
-                if (pos != -1)
-                {
-                    string feature = featuresID.Substring(0, pos);
-                    featuresID = featuresID.Substring(pos + 1);
-                    uint featureID = uint.Parse(feature);
-                    featuresIDs.Add(featureID);
-
-                }
-                else
-                {
-                    uint featureID = uint.Parse(featuresID);
-                    featuresIDs.Add(featureID);
-                    break;
-                }
-
-
-            }
+           
 
             return true;
         }

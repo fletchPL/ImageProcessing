@@ -19,7 +19,7 @@ namespace ImageProcessing
 
         public uint getFeaturesNumber()
         {
-            return this.features.Count();
+            return 1; // this.features.Count(); to poprawić 
         }
         public List<float> getFeatures()
         {
