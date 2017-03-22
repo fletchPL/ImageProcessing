@@ -41,12 +41,15 @@ namespace ImageProcessing
 
         private void openFileButton_Click(object sender, EventArgs e)
         {
+            Database db = new Database();
             if(openFileDialog.ShowDialog().Equals(DialogResult.OK))
             {
                 string fullPath = openFileDialog.FileName;
                 string fileName = openFileDialog.SafeFileName;
                 label3.Text = fullPath;
                 label4.Text = fileName;
+
+                db.load(fileName);
             }
         }
 

@@ -53,8 +53,23 @@ namespace ImageProcessing
         public bool load(string fileName) // FUNKCJA LOAD JEST CAŁA DO POPRAWY
         {
             clear();
+            string[] strArry;
+           try
+            {
+                using (StreamReader sr = new StreamReader(fileName))
+                {
+                    string document = sr.ReadToEnd();
+                    int size = document.Length;
 
-           
+                    for(int i=0;i<size;i++)
+                    {
+                        strArry = document.Split(',');
+                    }
+                }
+            }catch(Exception e)
+            {
+                e.Message.ToString();
+            }
 
             return true;
         }
