@@ -12,6 +12,7 @@ namespace ImageProcessing
 {
     public partial class Form1 : Form
     {
+        public Database db = new Database();
         public Form1()
         {
             InitializeComponent();
@@ -29,19 +30,25 @@ namespace ImageProcessing
 
         public void saveFileFunction()
         {
-            saveFileDialog.ShowDialog();
-            saveFileDialog.InitialDirectory = @"C:\";
-            saveFileDialog.RestoreDirectory = true;
-            saveFileDialog.DefaultExt = "txt";
-            saveFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            saveFileDialog.CheckFileExists = true;
-            saveFileDialog.CheckPathExists = true;
+            if (saveFileDialog.ShowDialog().Equals(DialogResult.OK))
+            {
+                saveFileDialog.InitialDirectory = @"C:\";
+                saveFileDialog.RestoreDirectory = true;
+                saveFileDialog.DefaultExt = "txt";
+                saveFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                saveFileDialog.CheckFileExists = true;
+                saveFileDialog.CheckPathExists = true;
+                string path = saveFileDialog.FileName;
+                db.save(path);
+            }
+         
+            
 
         }
 
         private void openFileButton_Click(object sender, EventArgs e)
         {
-            Database db = new Database();
+            
             if(openFileDialog.ShowDialog().Equals(DialogResult.OK))
             {
                 string fullPath = openFileDialog.FileName;

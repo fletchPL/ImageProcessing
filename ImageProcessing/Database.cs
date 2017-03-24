@@ -149,13 +149,14 @@ namespace ImageProcessing
             return true;
         }
 
-        //Funkcja Save będzie przeniesiona do FORM1.cs
-
-        public string getLine(StreamReader file)
+        public void save(string filePathToSave)
         {
-            string line = file.ReadLine();
-
-            return line;
+            StreamWriter sw = new StreamWriter(filePathToSave);
+            foreach(float id in featuresIDs)
+            {
+                sw.Write(id + ',');
+            }
+           // foreach(Object obj in )
         }
 
         public void clear()
@@ -169,7 +170,29 @@ namespace ImageProcessing
             noFeatures = 0;
         }
 
-       
+
+
+        #endregion
+        #region geter
+        List<Object> getObject()
+        {
+            return objects;
+        }
+
+        uint getNoClass()
+        {
+            string a = classNameVector.Count.ToString();
+            return Convert.ToUInt16(a);
+            //return a;
+        }
+        uint getNoObject()
+        {
+            return noObjects;
+        }
+        uint getNoFeatures()
+        {
+            return noFeatures;
+        }
         #endregion
     }
 }
