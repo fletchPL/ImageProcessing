@@ -12,7 +12,7 @@ namespace ImageProcessing
 {
     public partial class Form1 : Form
     {
-        public Database db = new Database();
+        
         public Form1()
         {
             InitializeComponent();
@@ -30,6 +30,7 @@ namespace ImageProcessing
 
         public void saveFileFunction()
         {
+            Database db = new Database();
             if (saveFileDialog.ShowDialog().Equals(DialogResult.OK))
             {
                 saveFileDialog.InitialDirectory = @"C:\";
@@ -48,8 +49,8 @@ namespace ImageProcessing
 
         private void openFileButton_Click(object sender, EventArgs e)
         {
-            
-            if(openFileDialog.ShowDialog().Equals(DialogResult.OK))
+            Database db = new Database();
+            if (openFileDialog.ShowDialog().Equals(DialogResult.OK))
             {
                 string fullPath = openFileDialog.FileName;
                 string fileName = openFileDialog.SafeFileName;

@@ -154,9 +154,17 @@ namespace ImageProcessing
             StreamWriter sw = new StreamWriter(filePathToSave);
             foreach(float id in featuresIDs)
             {
-                sw.Write(id + ',');
+                sw.Write(id + ",");
             }
-           // foreach(Object obj in )
+            foreach(Object obj in getObject())
+            {
+                sw.Write(obj.getClassName() + ",");
+                foreach(Object obj2 in getObject())
+                {
+                    sw.Write(obj2.getFeatures() + ",");
+                }
+                sw.Write("\n");
+            }
         }
 
         public void clear()
@@ -173,7 +181,7 @@ namespace ImageProcessing
 
 
         #endregion
-        #region geter
+        #region geter and setter
         List<Object> getObject()
         {
             return objects;
