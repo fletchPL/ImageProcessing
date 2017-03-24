@@ -49,7 +49,7 @@ namespace ImageProcessing
                 label3.Text = fullPath;
                 label4.Text = fileName;
 
-                db.load(fileName);
+                db.load(fullPath);
             }
         }
 
