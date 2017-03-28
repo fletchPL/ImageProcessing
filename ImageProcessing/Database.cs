@@ -34,7 +34,7 @@ namespace ImageProcessing
         {
             if (noFeatures.Equals(0))
             {
-                noFeatures = obj.getFeaturesNumber();
+                noFeatures = (uint)obj.getFeaturesNumber();
             }
             else if (noFeatures != obj.getFeaturesNumber())
             {
@@ -44,10 +44,13 @@ namespace ImageProcessing
             objects.Add(obj);
             ++noObjects;
 
-            if (classCounters[obj.getClassName()]++ == 0)
+
+            //Soultion below is wrong... to reconsider!!
+            if (!classCounters.ContainsKey(obj.getClassName()))
             {
                 classNameVector.Add(obj.getClassName());
             }
+
 
             return true;
         }
@@ -55,8 +58,8 @@ namespace ImageProcessing
         public bool load(string fileName) // FUNKCJA LOAD JEST CAŁA DO POPRAWY
         {
             clear();
-            
-           try
+
+            try
             {
                 using (StreamReader sr = new StreamReader(fileName))
                 {
@@ -71,12 +74,12 @@ namespace ImageProcessing
                     uint classFeaturesNo = uint.Parse(line.Substring(0, positionOfFirstSign));
 
                     string featuresID = line.Substring(positionOfFirstSign + 1);
-                    
-                    while(true)
+
+                    while (true)
                     {
                         positionOfFirstSign = featuresID.IndexOf(',');
 
-                        if(positionOfFirstSign != null)
+                        if (positionOfFirstSign != -1)
                         {
                             string feature = featuresID.Substring(0, positionOfFirstSign);
                             featuresID = featuresID.Substring(positionOfFirstSign + 1);
@@ -90,7 +93,8 @@ namespace ImageProcessing
                             break;
                         }
                     }
-                    while((line = sr.ReadLine()) != null)
+
+                    while ((line = sr.ReadLine()) != null)
                     {
                         int pos = line.IndexOf(',');
 
@@ -111,19 +115,19 @@ namespace ImageProcessing
                         string features = line.Substring(pos + 1);
                         List<float> featuresValues = new List<float>();
 
-                        while(true)
+                        while (true)
                         {
                             pos = features.IndexOf(',');
-                            if(pos != null)
+                            if (pos != -1)
                             {
                                 string feature = features.Substring(0, pos);
                                 features = features.Substring(pos + 1);
-                                float featuresValue = float.Parse(feature);
+                                float featuresValue = float.Parse(feature.Replace('.', ','));
                                 featuresValues.Add(featuresValue);
                             }
                             else
                             {
-                                float featureValue = float.Parse(features);
+                                float featureValue = float.Parse(features.Replace('.', ','));
                                 featuresValues.Add(featureValue);
                                 break;
                             }
@@ -131,19 +135,22 @@ namespace ImageProcessing
 
                         if (classFeaturesNo == featuresValues.Count())
                         {
-                           /* if (addObject(new Object(className, featuresValues)))
+
+                            if (addObject(new Object(className, featuresValues)))
                             {
 
-                            }*/
+                            }
                         }
-                        else return false; 
+                        else return false;
 
                     }
-                   
+
                 }
-            }catch(Exception e)
+            }
+            catch (FileLoadException e)
             {
                 e.Message.ToString();
+                Console.WriteLine("Co tu się odpierdala?");
             }
 
             return true;
@@ -152,14 +159,14 @@ namespace ImageProcessing
         public void save(string filePathToSave)
         {
             StreamWriter sw = new StreamWriter(filePathToSave);
-            foreach(float id in featuresIDs)
+            foreach (float id in featuresIDs)
             {
                 sw.Write(id + ",");
             }
-            foreach(Object obj in getObject())
+            foreach (Object obj in getObjects())
             {
                 sw.Write(obj.getClassName() + ",");
-                foreach(Object obj2 in getObject())
+                foreach (Object obj2 in getObjects())
                 {
                     sw.Write(obj2.getFeatures() + ",");
                 }
@@ -182,22 +189,22 @@ namespace ImageProcessing
 
         #endregion
         #region geter and setter
-        List<Object> getObject()
+        public List<Object> getObjects()
         {
             return objects;
         }
 
-        uint getNoClass()
+        public uint getNoClass()
         {
             string a = classNameVector.Count.ToString();
             return Convert.ToUInt16(a);
             //return a;
         }
-        uint getNoObject()
+        public uint getNoObject()
         {
             return noObjects;
         }
-        uint getNoFeatures()
+        public uint getNoFeatures()
         {
             return noFeatures;
         }
