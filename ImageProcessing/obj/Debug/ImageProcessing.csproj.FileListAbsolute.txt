@@ -7,12 +7,3 @@ C:\Users\Maciej\documents\visual studio 2015\Projects\ImageProcessing\ImageProce
 C:\Users\Maciej\documents\visual studio 2015\Projects\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.csproj.GenerateResource.Cache
 C:\Users\Maciej\documents\visual studio 2015\Projects\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.exe
 C:\Users\Maciej\documents\visual studio 2015\Projects\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.pdb
-C:\Statystyczne metody przetwarzania danych\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.exe.config
-C:\Statystyczne metody przetwarzania danych\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.exe
-C:\Statystyczne metody przetwarzania danych\ImageProcessing\ImageProcessing\bin\Debug\ImageProcessing.pdb
-C:\Statystyczne metody przetwarzania danych\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.csprojResolveAssemblyReference.cache
-C:\Statystyczne metody przetwarzania danych\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.Form1.resources
-C:\Statystyczne metody przetwarzania danych\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.Properties.Resources.resources
-C:\Statystyczne metody przetwarzania danych\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.csproj.GenerateResource.Cache
-C:\Statystyczne metody przetwarzania danych\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.exe
-C:\Statystyczne metody przetwarzania danych\ImageProcessing\ImageProcessing\obj\Debug\ImageProcessing.pdb

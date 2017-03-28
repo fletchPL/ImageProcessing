@@ -12,21 +12,14 @@ namespace ImageProcessing
         private string className;
         private List<float> features = new List<float>();
 
-        public Object(String className, List<float> features)
-        {
-            this.className = className;
-            this.features = features;
-        }
-
         public string getClassName()
         {
             return this.className;
         }
 
-        public int getFeaturesNumber()
+        public uint getFeaturesNumber()
         {
-            return this.features.Count();
-            //return 1; // this.features.Count(); to poprawić 
+            return 1; // this.features.Count(); to poprawić 
         }
         public List<float> getFeatures()
         {

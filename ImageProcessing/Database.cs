@@ -34,7 +34,7 @@ namespace ImageProcessing
         {
             if (noFeatures.Equals(0))
             {
-                noFeatures = (uint)obj.getFeaturesNumber();
+                noFeatures = obj.getFeaturesNumber();
             }
             else if (noFeatures != obj.getFeaturesNumber())
             {
@@ -44,13 +44,10 @@ namespace ImageProcessing
             objects.Add(obj);
             ++noObjects;
 
-
-            //Soultion below is wrong... to reconsider!!
-            if (!classCounters.ContainsKey(obj.getClassName()))
+            if (classCounters[obj.getClassName()]++ == 0)
             {
                 classNameVector.Add(obj.getClassName());
             }
-
 
             return true;
         }
@@ -79,7 +76,7 @@ namespace ImageProcessing
                     {
                         positionOfFirstSign = featuresID.IndexOf(',');
 
-                        if(positionOfFirstSign != -1)
+                        if(positionOfFirstSign != null)
                         {
                             string feature = featuresID.Substring(0, positionOfFirstSign);
                             featuresID = featuresID.Substring(positionOfFirstSign + 1);
@@ -93,7 +90,6 @@ namespace ImageProcessing
                             break;
                         }
                     }
-                    
                     while((line = sr.ReadLine()) != null)
                     {
                         int pos = line.IndexOf(',');
@@ -118,38 +114,36 @@ namespace ImageProcessing
                         while(true)
                         {
                             pos = features.IndexOf(',');
-                            if(pos != -1)
+                            if(pos != null)
                             {
                                 string feature = features.Substring(0, pos);
                                 features = features.Substring(pos + 1);
-                                float featuresValue = float.Parse(feature.Replace('.', ','));
+                                float featuresValue = float.Parse(feature);
                                 featuresValues.Add(featuresValue);
                             }
                             else
                             {
-                                float featureValue = float.Parse(features.Replace('.', ','));
+                                float featureValue = float.Parse(features);
                                 featuresValues.Add(featureValue);
                                 break;
                             }
                         }
-                        
+
                         if (classFeaturesNo == featuresValues.Count())
                         {
-                            
-                            if (addObject(new Object(className, featuresValues)))
+                           /* if (addObject(new Object(className, featuresValues)))
                             {
 
-                            }
+                            }*/
                         }
                         else return false; 
 
                     }
                    
                 }
-            }catch(FileLoadException e)
+            }catch(Exception e)
             {
                 e.Message.ToString();
-                Console.WriteLine("Co tu się odpierdala?");
             }
 
             return true;
@@ -162,10 +156,10 @@ namespace ImageProcessing
             {
                 sw.Write(id + ",");
             }
-            foreach(Object obj in getObjects())
+            foreach(Object obj in getObject())
             {
                 sw.Write(obj.getClassName() + ",");
-                foreach(Object obj2 in getObjects())
+                foreach(Object obj2 in getObject())
                 {
                     sw.Write(obj2.getFeatures() + ",");
                 }
@@ -188,22 +182,22 @@ namespace ImageProcessing
 
         #endregion
         #region geter and setter
-        public List<Object> getObjects()
+        List<Object> getObject()
         {
             return objects;
         }
 
-        public uint getNoClass()
+        uint getNoClass()
         {
             string a = classNameVector.Count.ToString();
             return Convert.ToUInt16(a);
             //return a;
         }
-        public uint getNoObject()
+        uint getNoObject()
         {
             return noObjects;
         }
-        public uint getNoFeatures()
+        uint getNoFeatures()
         {
             return noFeatures;
         }
