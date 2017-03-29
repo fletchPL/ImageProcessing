@@ -34,16 +34,18 @@
             this.pictureBoxOriginPicture = new System.Windows.Forms.PictureBox();
             this.selectFolderButton = new System.Windows.Forms.Button();
             this.tabFeaturesSelectionPages = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox = new System.Windows.Forms.ComboBox();
-            this.computeButton = new System.Windows.Forms.Button();
-            this.sfsRadioButton = new System.Windows.Forms.RadioButton();
-            this.fisherRadioButton = new System.Windows.Forms.RadioButton();
+            this.FScomboBox = new System.Windows.Forms.ComboBox();
+            this.FSpushButtonCompute = new System.Windows.Forms.Button();
+            this.FSradioButtonSFS = new System.Windows.Forms.RadioButton();
+            this.FSradioButtonFisher = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.saveFileButton = new System.Windows.Forms.Button();
             this.openFileButton = new System.Windows.Forms.Button();
             this.classifiersTabPage = new System.Windows.Forms.TabPage();
+            this.CtextBrowser = new System.Windows.Forms.RichTextBox();
             this.executeButton = new System.Windows.Forms.Button();
             this.trainingTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,7 +58,7 @@
             this.openFileButtonClassifiers = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.label5 = new System.Windows.Forms.Label();
+            this.FStextBrowserDatabaseInfo = new System.Windows.Forms.RichTextBox();
             this.tablePages.SuspendLayout();
             this.preprocessingTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdgesDetected)).BeginInit();
@@ -117,13 +119,14 @@
             // 
             // tabFeaturesSelectionPages
             // 
+            this.tabFeaturesSelectionPages.Controls.Add(this.FStextBrowserDatabaseInfo);
             this.tabFeaturesSelectionPages.Controls.Add(this.label5);
             this.tabFeaturesSelectionPages.Controls.Add(this.label4);
             this.tabFeaturesSelectionPages.Controls.Add(this.label3);
-            this.tabFeaturesSelectionPages.Controls.Add(this.comboBox);
-            this.tabFeaturesSelectionPages.Controls.Add(this.computeButton);
-            this.tabFeaturesSelectionPages.Controls.Add(this.sfsRadioButton);
-            this.tabFeaturesSelectionPages.Controls.Add(this.fisherRadioButton);
+            this.tabFeaturesSelectionPages.Controls.Add(this.FScomboBox);
+            this.tabFeaturesSelectionPages.Controls.Add(this.FSpushButtonCompute);
+            this.tabFeaturesSelectionPages.Controls.Add(this.FSradioButtonSFS);
+            this.tabFeaturesSelectionPages.Controls.Add(this.FSradioButtonFisher);
             this.tabFeaturesSelectionPages.Controls.Add(this.label1);
             this.tabFeaturesSelectionPages.Controls.Add(this.saveFileButton);
             this.tabFeaturesSelectionPages.Controls.Add(this.openFileButton);
@@ -134,6 +137,15 @@
             this.tabFeaturesSelectionPages.TabIndex = 1;
             this.tabFeaturesSelectionPages.Text = "Features Selection";
             this.tabFeaturesSelectionPages.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(36, 293);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "label5";
             // 
             // label4
             // 
@@ -153,44 +165,45 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "label3";
             // 
-            // comboBox
+            // FScomboBox
             // 
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(282, 33);
-            this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(104, 21);
-            this.comboBox.TabIndex = 6;
+            this.FScomboBox.FormattingEnabled = true;
+            this.FScomboBox.Location = new System.Drawing.Point(282, 33);
+            this.FScomboBox.Name = "FScomboBox";
+            this.FScomboBox.Size = new System.Drawing.Size(104, 21);
+            this.FScomboBox.TabIndex = 6;
             // 
-            // computeButton
+            // FSpushButtonCompute
             // 
-            this.computeButton.Location = new System.Drawing.Point(392, 20);
-            this.computeButton.Name = "computeButton";
-            this.computeButton.Size = new System.Drawing.Size(89, 44);
-            this.computeButton.TabIndex = 5;
-            this.computeButton.Text = "Compute";
-            this.computeButton.UseVisualStyleBackColor = true;
+            this.FSpushButtonCompute.Location = new System.Drawing.Point(392, 20);
+            this.FSpushButtonCompute.Name = "FSpushButtonCompute";
+            this.FSpushButtonCompute.Size = new System.Drawing.Size(89, 44);
+            this.FSpushButtonCompute.TabIndex = 5;
+            this.FSpushButtonCompute.Text = "Compute";
+            this.FSpushButtonCompute.UseVisualStyleBackColor = true;
+            this.FSpushButtonCompute.Click += new System.EventHandler(this.FSpushButtonCompute_Click);
             // 
-            // sfsRadioButton
+            // FSradioButtonSFS
             // 
-            this.sfsRadioButton.AutoSize = true;
-            this.sfsRadioButton.Location = new System.Drawing.Point(277, 98);
-            this.sfsRadioButton.Name = "sfsRadioButton";
-            this.sfsRadioButton.Size = new System.Drawing.Size(45, 17);
-            this.sfsRadioButton.TabIndex = 4;
-            this.sfsRadioButton.TabStop = true;
-            this.sfsRadioButton.Text = "SFS";
-            this.sfsRadioButton.UseVisualStyleBackColor = true;
+            this.FSradioButtonSFS.AutoSize = true;
+            this.FSradioButtonSFS.Location = new System.Drawing.Point(277, 98);
+            this.FSradioButtonSFS.Name = "FSradioButtonSFS";
+            this.FSradioButtonSFS.Size = new System.Drawing.Size(45, 17);
+            this.FSradioButtonSFS.TabIndex = 4;
+            this.FSradioButtonSFS.TabStop = true;
+            this.FSradioButtonSFS.Text = "SFS";
+            this.FSradioButtonSFS.UseVisualStyleBackColor = true;
             // 
-            // fisherRadioButton
+            // FSradioButtonFisher
             // 
-            this.fisherRadioButton.AutoSize = true;
-            this.fisherRadioButton.Location = new System.Drawing.Point(277, 70);
-            this.fisherRadioButton.Name = "fisherRadioButton";
-            this.fisherRadioButton.Size = new System.Drawing.Size(53, 17);
-            this.fisherRadioButton.TabIndex = 3;
-            this.fisherRadioButton.TabStop = true;
-            this.fisherRadioButton.Text = "Fisher";
-            this.fisherRadioButton.UseVisualStyleBackColor = true;
+            this.FSradioButtonFisher.AutoSize = true;
+            this.FSradioButtonFisher.Location = new System.Drawing.Point(277, 70);
+            this.FSradioButtonFisher.Name = "FSradioButtonFisher";
+            this.FSradioButtonFisher.Size = new System.Drawing.Size(53, 17);
+            this.FSradioButtonFisher.TabIndex = 3;
+            this.FSradioButtonFisher.TabStop = true;
+            this.FSradioButtonFisher.Text = "Fisher";
+            this.FSradioButtonFisher.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -223,6 +236,7 @@
             // 
             // classifiersTabPage
             // 
+            this.classifiersTabPage.Controls.Add(this.CtextBrowser);
             this.classifiersTabPage.Controls.Add(this.executeButton);
             this.classifiersTabPage.Controls.Add(this.trainingTextBox);
             this.classifiersTabPage.Controls.Add(this.label2);
@@ -241,9 +255,17 @@
             this.classifiersTabPage.Text = "Classifiers";
             this.classifiersTabPage.UseVisualStyleBackColor = true;
             // 
+            // CtextBrowser
+            // 
+            this.CtextBrowser.Location = new System.Drawing.Point(557, 155);
+            this.CtextBrowser.Name = "CtextBrowser";
+            this.CtextBrowser.Size = new System.Drawing.Size(244, 244);
+            this.CtextBrowser.TabIndex = 12;
+            this.CtextBrowser.Text = "";
+            // 
             // executeButton
             // 
-            this.executeButton.Location = new System.Drawing.Point(666, 6);
+            this.executeButton.Location = new System.Drawing.Point(640, 6);
             this.executeButton.Name = "executeButton";
             this.executeButton.Size = new System.Drawing.Size(96, 44);
             this.executeButton.TabIndex = 11;
@@ -331,14 +353,13 @@
             // 
             this.openFileDialog.FileName = "openFileDialog";
             // 
-            // label5
+            // FStextBrowserDatabaseInfo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 293);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "label5";
+            this.FStextBrowserDatabaseInfo.Location = new System.Drawing.Point(557, 20);
+            this.FStextBrowserDatabaseInfo.Name = "FStextBrowserDatabaseInfo";
+            this.FStextBrowserDatabaseInfo.Size = new System.Drawing.Size(244, 244);
+            this.FStextBrowserDatabaseInfo.TabIndex = 13;
+            this.FStextBrowserDatabaseInfo.Text = "";
             // 
             // Form1
             // 
@@ -348,6 +369,7 @@
             this.Controls.Add(this.tablePages);
             this.Name = "Form1";
             this.Text = "SMPD";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tablePages.ResumeLayout(false);
             this.preprocessingTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdgesDetected)).EndInit();
@@ -371,11 +393,11 @@
         private System.Windows.Forms.PictureBox pictureBoxOriginPicture;
         private System.Windows.Forms.Button saveFileButton;
         private System.Windows.Forms.Button openFileButton;
-        private System.Windows.Forms.RadioButton fisherRadioButton;
+        private System.Windows.Forms.RadioButton FSradioButtonFisher;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton sfsRadioButton;
-        private System.Windows.Forms.Button computeButton;
-        private System.Windows.Forms.ComboBox comboBox;
+        private System.Windows.Forms.RadioButton FSradioButtonSFS;
+        private System.Windows.Forms.Button FSpushButtonCompute;
+        private System.Windows.Forms.ComboBox FScomboBox;
         private System.Windows.Forms.Button saveFileButtonClassifiers;
         private System.Windows.Forms.Button openFileButtonClassifiers;
         private System.Windows.Forms.Label ClassifieresLabel;
@@ -391,6 +413,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RichTextBox CtextBrowser;
+        private System.Windows.Forms.RichTextBox FStextBrowserDatabaseInfo;
     }
 }
 
