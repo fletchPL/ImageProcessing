@@ -61,7 +61,7 @@ namespace ImageProcessing
 
                 db.load(fullPath);
                 algorithms = new Algorithms();
-                int result = algorithms.nearestNeighbourAlgorithm(db, ratio);
+                double result = algorithms.nearestNeighbourAlgorithm(db, ratio);
                 label5.Text = result.ToString();
 
                // FSupdateButtonState();

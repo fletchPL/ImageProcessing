@@ -8,30 +8,38 @@ namespace ImageProcessing
 {
     class Algorithms
     {
-        public int nearestNeighbourAlgorithm(Database db, double dbRatio)
+        public double nearestNeighbourAlgorithm(Database db, double dbRatio)
         {
             double somePart = db.getObjects().Count * dbRatio;
             List<Object> testObjects = new List<Object>();
             List<Object> trainObjects = new List<Object>();
             int position = 0;
             Random r = new Random();
-            
+
+            int number;
+            List<int> intList = new List<int>();
+            for (int i = 0; i < somePart; i++)
+            {
+                do
+                {
+                    number = r.Next(0, db.getObjects().Count);
+
+                } while (intList.Contains(number));
+                intList.Add(number);
+            }
 
             for (int i = 0; i < db.getObjects().Count; i++)
             {
-                int randomNumber = r.Next(0, db.getObjects().Count);
-                if (i < somePart)
+                if (intList.Contains(i))
                 {
-                    testObjects.Add(db.getObjects()[randomNumber]);
+                    testObjects.Add(db.getObjects()[i]);
                 }
                 else
                 {
-                    trainObjects.Add(db.getObjects()[randomNumber]);
+                    trainObjects.Add(db.getObjects()[i]);
                 }
             }
-            Console.Write(somePart + " " + db.getObjects().Count);
-
-
+            int correctClasifierCounter = 0, incorrectClasifierCounter = 0;
             foreach (Object o1 in testObjects)
             {
                 double prevEuklSum = 0;
@@ -46,9 +54,19 @@ namespace ImageProcessing
                         position = counter;
                     }
                 }
-                
+                string temp = trainObjects[position-1].getClassName().ToString();
+                if (o1.getClassName().Equals(temp))
+                {
+                    correctClasifierCounter++;
+                }
+                else
+                {
+                    incorrectClasifierCounter++;
+                }
+
             }
-            return position;
+            double result = (double)correctClasifierCounter/testObjects.Count;
+            return result;
         }
         public double euklidesSum(Object o1, Object o2)
         {
