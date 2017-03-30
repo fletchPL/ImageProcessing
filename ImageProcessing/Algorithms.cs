@@ -14,15 +14,19 @@ namespace ImageProcessing
             List<Object> testObjects = new List<Object>();
             List<Object> trainObjects = new List<Object>();
             int position = 0;
+            Random r = new Random();
+            
+
             for (int i = 0; i < db.getObjects().Count; i++)
             {
+                int randomNumber = r.Next(0, db.getObjects().Count);
                 if (i < somePart)
                 {
-                    testObjects.Add(db.getObjects()[i]);
+                    testObjects.Add(db.getObjects()[randomNumber]);
                 }
                 else
                 {
-                    trainObjects.Add(db.getObjects()[i]);
+                    trainObjects.Add(db.getObjects()[randomNumber]);
                 }
             }
             Console.Write(somePart + " " + db.getObjects().Count);
@@ -42,7 +46,6 @@ namespace ImageProcessing
                         position = counter;
                     }
                 }
-                // Console.WriteLine("Najbliżej do próbki numer:" + position);
                 
             }
             return position;

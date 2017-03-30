@@ -12,7 +12,7 @@ namespace ImageProcessing
 {
     public partial class Form1 : Form
     {
-        Database db;
+        Database maple_oak;
         Algorithms algorithms;
         double ratio = 0.25;
         public Form1()
@@ -51,7 +51,7 @@ namespace ImageProcessing
 
         private void openFileButton_Click(object sender, EventArgs e)
         {
-            //db = new Database();
+            Database db = new Database();
             if (openFileDialog.ShowDialog().Equals(DialogResult.OK))
             {
                 string fullPath = openFileDialog.FileName;
@@ -64,24 +64,24 @@ namespace ImageProcessing
                 int result = algorithms.nearestNeighbourAlgorithm(db, ratio);
                 label5.Text = result.ToString();
 
-                FSupdateButtonState();
-                updateDatabaseInfo();
+               // FSupdateButtonState();
+               // updateDatabaseInfo();
              
             }
 
         }
 
-        private void updateDatabaseInfo()
+      /*  private void updateDatabaseInfo()
         {
             FScomboBox.Items.Clear();
-            for(int i=0;i<=db.getNoFeatures();++i)
+            for(int i=0;i<= maple_oak.getNoFeatures();++i)
             {
                 FScomboBox.Items.Add(i.ToString());
             }
-            FStextBrowserDatabaseInfo.Text = "noClass: " + db.getNoClass().ToString();
-            FStextBrowserDatabaseInfo.Text = "noObjects: " + db.getNoObject().ToString();
-            FStextBrowserDatabaseInfo.Text = "noFeatures: " + db.getNoFeatures().ToString();
-        }
+            FStextBrowserDatabaseInfo.Text = "noClass: " + maple_oak.getNoClass().ToString();
+            FStextBrowserDatabaseInfo.Text = "noObjects: " + maple_oak.getNoObject().ToString();
+            FStextBrowserDatabaseInfo.Text = "noFeatures: " + maple_oak.getNoFeatures().ToString();
+        }*/
 
         private void computeButton_Click(object sender, EventArgs e)
         {
@@ -90,11 +90,11 @@ namespace ImageProcessing
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            FSupdateButtonState();
+          //  FSupdateButtonState();
         }
-        private void FSupdateButtonState()
+       /* private void FSupdateButtonState()
         {
-            if(db.getNoObject().Equals(0))
+            if(db.getNoObject() == 0)
             {
                 FSsetButtonState(false);
             }
@@ -102,7 +102,7 @@ namespace ImageProcessing
             {
                 FSsetButtonState(true);
             }
-        }
+        }*/
 
         private void FSsetButtonState(bool state)
         {
@@ -121,17 +121,17 @@ namespace ImageProcessing
 
             if(FSradioButtonFisher.Checked)
             {
-                if(dimension.Equals(1) && db.getNoClass().Equals(2))
+                if(dimension.Equals(1) && maple_oak.getNoClass().Equals(2))
                 {
                     float FLD = 0, tmp;
                     int maxInd = -1;
 
-                    for(int i=0; i<db.getNoFeatures(); ++i)
+                    for(int i=0; i< maple_oak.getNoFeatures(); ++i)
                     {
                         Dictionary<string, float> classAverages;
                         Dictionary<string, float> classStds;
 
-                        foreach(Object ob in db.getObjects())
+                        foreach(Object ob in maple_oak.getObjects())
                         {
                           //  classAverages[ob.getClassName()] += ob.getFeatures()[i];
                           //  classStds[ob.getClassName()] += ob.getFeatures()[i] * ob.getFeatures()[i];
@@ -147,6 +147,11 @@ namespace ImageProcessing
                    
                 }
             }
+        }
+
+        private void trainingTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -34,6 +34,7 @@
             this.pictureBoxOriginPicture = new System.Windows.Forms.PictureBox();
             this.selectFolderButton = new System.Windows.Forms.Button();
             this.tabFeaturesSelectionPages = new System.Windows.Forms.TabPage();
+            this.FStextBrowserDatabaseInfo = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.openFileButtonClassifiers = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.FStextBrowserDatabaseInfo = new System.Windows.Forms.RichTextBox();
             this.tablePages.SuspendLayout();
             this.preprocessingTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdgesDetected)).BeginInit();
@@ -137,6 +137,14 @@
             this.tabFeaturesSelectionPages.TabIndex = 1;
             this.tabFeaturesSelectionPages.Text = "Features Selection";
             this.tabFeaturesSelectionPages.UseVisualStyleBackColor = true;
+            // 
+            // FStextBrowserDatabaseInfo
+            // 
+            this.FStextBrowserDatabaseInfo.Location = new System.Drawing.Point(557, 20);
+            this.FStextBrowserDatabaseInfo.Name = "FStextBrowserDatabaseInfo";
+            this.FStextBrowserDatabaseInfo.Size = new System.Drawing.Size(244, 244);
+            this.FStextBrowserDatabaseInfo.TabIndex = 13;
+            this.FStextBrowserDatabaseInfo.Text = "";
             // 
             // label5
             // 
@@ -278,6 +286,7 @@
             this.trainingTextBox.Name = "trainingTextBox";
             this.trainingTextBox.Size = new System.Drawing.Size(100, 20);
             this.trainingTextBox.TabIndex = 10;
+            this.trainingTextBox.TextChanged += new System.EventHandler(this.trainingTextBox_TextChanged);
             // 
             // label2
             // 
@@ -352,14 +361,6 @@
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog";
-            // 
-            // FStextBrowserDatabaseInfo
-            // 
-            this.FStextBrowserDatabaseInfo.Location = new System.Drawing.Point(557, 20);
-            this.FStextBrowserDatabaseInfo.Name = "FStextBrowserDatabaseInfo";
-            this.FStextBrowserDatabaseInfo.Size = new System.Drawing.Size(244, 244);
-            this.FStextBrowserDatabaseInfo.TabIndex = 13;
-            this.FStextBrowserDatabaseInfo.Text = "";
             // 
             // Form1
             // 
