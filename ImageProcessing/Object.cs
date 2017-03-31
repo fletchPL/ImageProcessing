@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ImageProcessing
 {
-    class Object
+    public class Object
     {
         private int classID;
         private string className;

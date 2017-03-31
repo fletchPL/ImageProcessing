@@ -13,8 +13,7 @@ namespace ImageProcessing
     public partial class Form1 : Form
     {
         Database maple_oak;
-        Algorithms algorithms;
-        double ratio = 0.25;
+
         public Form1()
         {
             InitializeComponent();
@@ -51,23 +50,7 @@ namespace ImageProcessing
 
         private void openFileButton_Click(object sender, EventArgs e)
         {
-            Database db = new Database();
-            if (openFileDialog.ShowDialog().Equals(DialogResult.OK))
-            {
-                string fullPath = openFileDialog.FileName;
-                string fileName = openFileDialog.SafeFileName;
-                label3.Text = fullPath;
-                label4.Text = fileName;
-
-                db.load(fullPath);
-                algorithms = new Algorithms();
-                double result = algorithms.nearestNeighbourAlgorithm(db, ratio);
-                label5.Text = result.ToString();
-
-               // FSupdateButtonState();
-               // updateDatabaseInfo();
-             
-            }
+           
 
         }
 
@@ -90,7 +73,8 @@ namespace ImageProcessing
 
         private void Form1_Load(object sender, EventArgs e)
         {
-          //  FSupdateButtonState();
+            //Singleton single = new Singleton();
+            //FSupdateButtonState();
         }
        /* private void FSupdateButtonState()
         {
@@ -152,6 +136,26 @@ namespace ImageProcessing
         private void trainingTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void openFileButtonClassifiers_Click(object sender, EventArgs e)
+        {
+            Database db = new Database();
+            NearestNeighbour nn = new NearestNeighbour();
+            if (openFileDialog.ShowDialog().Equals(DialogResult.OK))
+            {
+                string fullPath = openFileDialog.FileName;
+                string fileName = openFileDialog.SafeFileName;
+
+                db.load(fullPath);
+                
+                double result = Math.Round(nn.nearestNeighbourAlgorithm(db),2);
+                CtextBrowser.AppendText( "Dokładność : " + result.ToString());
+                
+                // FSupdateButtonState();
+                // updateDatabaseInfo();
+
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ImageProcessing
 {
-    class Database
+    public class Database
     {
         #region Private Variables
         private List<Object> objects = new List<Object>();                              //Lista w C# zamiast Vectora w C++
@@ -44,8 +44,6 @@ namespace ImageProcessing
             objects.Add(obj);
             ++noObjects;
 
-
-            //Soultion below is wrong... to reconsider!!
             if (!classCounters.ContainsKey(obj.getClassName()))
             {
                 classNameVector.Add(obj.getClassName());
@@ -55,7 +53,7 @@ namespace ImageProcessing
             return true;
         }
 
-        public bool load(string fileName) // FUNKCJA LOAD JEST CAŁA DO POPRAWY
+        public bool load(string fileName) 
         {
             clear();
 
@@ -198,7 +196,7 @@ namespace ImageProcessing
         {
             string a = classNameVector.Count.ToString();
             return Convert.ToUInt16(a);
-            //return a;
+         
         }
         public uint getNoObject()
         {

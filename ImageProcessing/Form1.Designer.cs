@@ -357,6 +357,7 @@
             this.openFileButtonClassifiers.TabIndex = 2;
             this.openFileButtonClassifiers.Text = "Open File";
             this.openFileButtonClassifiers.UseVisualStyleBackColor = true;
+            this.openFileButtonClassifiers.Click += new System.EventHandler(this.openFileButtonClassifiers_Click);
             // 
             // openFileDialog
             // 
