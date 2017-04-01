@@ -10,15 +10,15 @@ namespace ImageProcessing
     {
         public int classifie(Object objectFromTestList)
         {
-            int counter = 0;
+           // int counter = 0;
             foreach (Object o2 in Global.trainObjects)
             {
-                counter++;
+                Global.counter++;
                 double euklSum = euklidesSum(objectFromTestList, o2);
                 if (Global.prevEuklSum == 0 || euklSum < Global.prevEuklSum)
                 {
                     Global.prevEuklSum = euklSum;
-                    Global.position = counter;
+                    Global.position = Global.counter;
                 }
             }
             return Global.position;

@@ -150,7 +150,7 @@ namespace ImageProcessing
                 db.load(fullPath);
                 
                 double result = Math.Round(nn.nearestNeighbourAlgorithm(db),2);
-                CtextBrowser.AppendText( "Dokładność : " + result.ToString());
+                CtextBrowser.AppendText( "Dokładność : " + result.ToString() +"%");
                 
                 // FSupdateButtonState();
                 // updateDatabaseInfo();

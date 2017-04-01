@@ -41,7 +41,8 @@ namespace ImageProcessing
             Classifier classifier = new Classifier();
             foreach (Object o1 in Global.testObjects)
             {
-              
+                Global.prevEuklSum = 0;
+                Global.counter = 0;
                 int positionOfObject = classifier.classifie(o1);
                 
                 string temp = Global.trainObjects[positionOfObject - 1].getClassName().ToString();
