@@ -55,6 +55,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="NearestMean.cs" />
     <Compile Include="NearestNeighbour.cs" />
     <Compile Include="Object.cs" />
     <Compile Include="Program.cs" />

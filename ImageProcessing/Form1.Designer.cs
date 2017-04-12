@@ -35,9 +35,6 @@
             this.selectFolderButton = new System.Windows.Forms.Button();
             this.tabFeaturesSelectionPages = new System.Windows.Forms.TabPage();
             this.FStextBrowserDatabaseInfo = new System.Windows.Forms.RichTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.FScomboBox = new System.Windows.Forms.ComboBox();
             this.FSpushButtonCompute = new System.Windows.Forms.Button();
             this.FSradioButtonSFS = new System.Windows.Forms.RadioButton();
@@ -120,9 +117,6 @@
             // tabFeaturesSelectionPages
             // 
             this.tabFeaturesSelectionPages.Controls.Add(this.FStextBrowserDatabaseInfo);
-            this.tabFeaturesSelectionPages.Controls.Add(this.label5);
-            this.tabFeaturesSelectionPages.Controls.Add(this.label4);
-            this.tabFeaturesSelectionPages.Controls.Add(this.label3);
             this.tabFeaturesSelectionPages.Controls.Add(this.FScomboBox);
             this.tabFeaturesSelectionPages.Controls.Add(this.FSpushButtonCompute);
             this.tabFeaturesSelectionPages.Controls.Add(this.FSradioButtonSFS);
@@ -145,33 +139,6 @@
             this.FStextBrowserDatabaseInfo.Size = new System.Drawing.Size(244, 244);
             this.FStextBrowserDatabaseInfo.TabIndex = 13;
             this.FStextBrowserDatabaseInfo.Text = "";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 293);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "label5";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 264);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "label4";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 232);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "label3";
             // 
             // FScomboBox
             // 
@@ -412,9 +379,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox CtextBrowser;
         private System.Windows.Forms.RichTextBox FStextBrowserDatabaseInfo;
     }

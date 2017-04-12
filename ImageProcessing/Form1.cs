@@ -73,7 +73,12 @@ namespace ImageProcessing
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Singleton single = new Singleton();
+            KcomboBox.Items.Add(5.ToString());
+            KcomboBox.Items.Add(10.ToString());
+            ClassifieresComboBox.Items.Add("NN");
+            ClassifieresComboBox.Items.Add("KNN");
+            ClassifieresComboBox.Items.Add("NM");
+            ClassifieresComboBox.Items.Add("KNN");
             //FSupdateButtonState();
         }
        /* private void FSupdateButtonState()
@@ -140,16 +145,16 @@ namespace ImageProcessing
 
         private void openFileButtonClassifiers_Click(object sender, EventArgs e)
         {
-            Database db = new Database();
+           
             NearestNeighbour nn = new NearestNeighbour();
             if (openFileDialog.ShowDialog().Equals(DialogResult.OK))
             {
                 string fullPath = openFileDialog.FileName;
                 string fileName = openFileDialog.SafeFileName;
 
-                db.load(fullPath);
+                Global.data.load(fullPath);
                 
-                double result = Math.Round(nn.nearestNeighbourAlgorithm(db),2);
+                double result = Math.Round(nn.nearestNeighbourAlgorithm(),2);
                 CtextBrowser.AppendText( "Dokładność : " + result.ToString() +"%");
                 
                 // FSupdateButtonState();
