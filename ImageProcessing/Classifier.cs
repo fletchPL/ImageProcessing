@@ -33,5 +33,6 @@ namespace ImageProcessing
             }
             return Math.Sqrt(sumOfSquareDifference);
         }
+
     }
 }

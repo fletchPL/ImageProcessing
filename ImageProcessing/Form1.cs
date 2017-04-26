@@ -145,16 +145,16 @@ namespace ImageProcessing
 
         private void openFileButtonClassifiers_Click(object sender, EventArgs e)
         {
-           
-            NearestNeighbour nn = new NearestNeighbour();
+            NearestMean NM = new NearestMean();
+           // NearestNeighbour nn = new NearestNeighbour();
             if (openFileDialog.ShowDialog().Equals(DialogResult.OK))
             {
                 string fullPath = openFileDialog.FileName;
                 string fileName = openFileDialog.SafeFileName;
 
                 Global.data.load(fullPath);
-                
-                double result = Math.Round(nn.nearestNeighbourAlgorithm(),2);
+                double result = Math.Round(NM.nearestMeanAlgorithm(), 2);
+             //   double result = Math.Round(nn.nearestNeighbourAlgorithm(),2);
                 CtextBrowser.AppendText( "Dokładność : " + result.ToString() +"%");
                 
                 // FSupdateButtonState();

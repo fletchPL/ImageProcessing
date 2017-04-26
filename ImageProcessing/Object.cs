@@ -12,6 +12,11 @@ namespace ImageProcessing
         private string className;
         private List<float> features = new List<float>();
 
+        public Object()
+        {
+
+        }
+
         public Object(String className, List<float> features)
         {
             this.className = className;
@@ -32,5 +37,11 @@ namespace ImageProcessing
         {
             return this.features;
         }
+
+        public void setFeatures(List<float> features)
+        {
+            this.features = features;
+        }
+
     }
 }
